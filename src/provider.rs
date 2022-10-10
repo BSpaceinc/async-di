@@ -54,9 +54,11 @@ where T: Resolvable
 
 mod private {
   pub trait Sealed {}
+
+  impl<T> Sealed for T {}
 }
 
-pub trait Resolvable: Clone + Send + Sync + 'static {}
+pub trait Resolvable: private::Sealed + Clone + Send + Sync + 'static {}
 
 impl<T> Resolvable for T
   where T: Clone + Send + Sync + ?Sized + 'static

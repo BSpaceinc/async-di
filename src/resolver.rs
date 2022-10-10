@@ -216,6 +216,7 @@ where
 {
     let type_name = type_name::<S>();
     let type_id = TypeId::of::<S>();
+
     let (tx, rx) = oneshot::channel();
     let req = WorkerMessage::ResolveRequest {
         type_info: Named {
