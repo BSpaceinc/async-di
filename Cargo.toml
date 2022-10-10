@@ -1,19 +1,4 @@
-[package]
-name = "async-di"
-version = "0.2.0"
-authors = ["Flux Xu <fluxxu@gmail.com>"]
-edition = "2018"
-description = "Async dependency injection container"
-license = "Apache-2.0 OR MIT"
-repository = "https://github.com/BSpaceinc/async-di"
-homepage = "https://github.com/BSpaceinc/async-di"
-documentation = "https://docs.rs/async-di"
-keywords = [ "dependency-injection", "inversion-of-control", "di", "ioc"]
-
-[dependencies]
-thiserror = "1.0"
-async-trait = "0.1"
-tokio = { version = "1.2", features = ["sync", "macros", "rt-multi-thread"] }
-futures = "0.3"
-anyhow = "1.0"
-tracing = "0.1"
+[workspace]
+members = [
+  "crates/async-di",
+]
